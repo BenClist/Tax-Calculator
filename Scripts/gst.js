@@ -1,12 +1,13 @@
 function calculateGST() {
-    var amount = parseFloat(document.getElementById("amount").value);
-    var including = document.getElementById("inclgst").checked;
-    var excluding = document.getElementById("exclgst").checked;
-    var gst = document.getElementById("gst");
-    var total;
+    "use strict";
+    var amount = parseFloat(document.getElementById("amount").value),
+        including = document.getElementById("inclgst").checked,
+        excluding = document.getElementById("exclgst").checked,
+        gst = document.getElementById("gst"),
+        total;
 
     if (!excluding && !including) {
-        alert("Please choose either including or excluding GST")
+        alert("Please choose either including or excluding GST");
         return;
     } else if (excluding) {
         total = (amount * 1.15) - amount;
